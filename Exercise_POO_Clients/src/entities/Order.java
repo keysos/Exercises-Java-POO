@@ -12,7 +12,7 @@ public class Order {
 	public OrderStatus status;
 	public Client client;
 
-	List<OrderItem> orderItemList = new ArrayList<>();
+	public List<OrderItem> orderItemList = new ArrayList<>();
 
 	public Order() {
 
@@ -74,13 +74,11 @@ public class Order {
 		sb.append("ORDER SUMMARY: \n");
 		sb.append("Order moment: " + moment + "\n");
 		sb.append("Order status: " + status + "\n");
-		client.toString();
-		sb.append("Order items: \n");
+		sb.append(client.toString());
 		for (OrderItem item : orderItemList) {
-			sb.append(item.getProduct().getName() + "," + item.getPrice() + ", Quantity: " + item.getQuantity()
-					+", Subtotal: " + String.format("%.2f", item.subTotal()) + "\n");
+			sb.append(item.toString() + "\n");
 		}
-		sb.append(total());
+		sb.append("Total price: " + total());
 		return sb.toString();
 	}
 

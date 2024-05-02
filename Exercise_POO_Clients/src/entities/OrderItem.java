@@ -44,4 +44,13 @@ public class OrderItem {
 		return quantity * price;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Order items: \n");
+		sb.append(product.getName() + "," + price + ", Quantity: " + quantity + ", Subtotal: "
+				+ String.format("%.2f", subTotal()) + "\n");
+		return sb.toString();
+	}
+
 }

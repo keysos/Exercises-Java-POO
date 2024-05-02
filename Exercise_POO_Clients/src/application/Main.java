@@ -49,7 +49,7 @@ public class Main {
 			double productPrice = scanner.nextDouble();
 			scanner.nextLine();
 			System.out.print("Product quantity: ");
-			int productQuantity = scanner.nextInt();	
+			int productQuantity = scanner.nextInt();
 			Product product = new Product(productName, productPrice);
 			OrderItem orderItem = new OrderItem(productQuantity, product.getPrice(), product);
 			order.addItem(orderItem);
